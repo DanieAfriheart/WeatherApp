@@ -14,9 +14,13 @@ function App() {
                   <p>the.Weather</p>
                 </div>
                 <div className="align-items-end h-75 d-flex">
-                  <div className="row">
+                  <div className="row d-flex flex-row align-items-center">
                     <div className="col">
-                      <h1 className='deg'>61*</h1>
+                      <h1 className='deg'>16</h1>
+                    </div>
+                    <div className="col">
+                      <h1>London</h1>
+                      <p>Lorem, ipsum.</p>
                     </div>
                   </div>
                 </div>
