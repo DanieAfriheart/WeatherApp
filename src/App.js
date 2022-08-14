@@ -1,9 +1,10 @@
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import Watermark from "./Watermark";
 
 // Icon
 import { RiSunCloudyLine } from 'react-icons/ri';
@@ -59,6 +60,7 @@ function App() {
                 </div>
               </Col>
             </div>
+            <Watermark />
           </Container>
         </Container>
       </div>

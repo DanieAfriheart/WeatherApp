@@ -41,3 +41,7 @@ input {
   outline: none;
   color: #fff;
 }
+.small{
+  font-size: 0.7em !important;
+  color: silver;
+}
