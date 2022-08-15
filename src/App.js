@@ -7,7 +7,7 @@ import { getFormattedWeatherData } from './Weather';
 import Description from "./Description";
 
 // Icon
-import { RiSunCloudyLine } from 'react-icons/ri';
+// import { RiSunCloudyLine } from 'react-icons/ri';
 import { BsSearch } from 'react-icons/bs';
 import { useEffect } from 'react';
 
@@ -16,7 +16,9 @@ function App() {
 
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const data = await getFormattedWeatherData("London")
+      const data = await getFormattedWeatherData("Japan")
+      
+      console.log(data);
     };
     fetchWeatherData();
   }, []);
@@ -47,7 +49,8 @@ function App() {
                       <p>Lorem, ipsum.</p>
                     </div>
                     <div className="col">
-                      <RiSunCloudyLine className='display-3' />
+                      {/* <RiSunCloudyLine className='display-3' /> */}
+                      <img className='img-fluid col-md-7' src="https://openweathermap.org/img/wn/02d@2x.png" alt="" />
                       <p>cloudy</p>
                     </div>
                   </div>
