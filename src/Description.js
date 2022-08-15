@@ -2,9 +2,6 @@ import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 
-// Icons
-import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
-import { CgSmile } from 'react-icons/cg'
 
 const Description = () => {
     return (
