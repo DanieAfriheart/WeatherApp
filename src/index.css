@@ -22,7 +22,7 @@
 
 .morph {
   /* background: rgba(255, 255, 255, 0.2); */
-  background: rgba(3, 3, 3, 0.3);
+  background: rgba(3, 3, 3, 0.4);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(5px);
@@ -32,7 +32,9 @@
   /* color: #aaa; */
   color: silver;
 }
-
+.border-top{
+  color: silver !important;
+}
 input {
   background-color: transparent;
   border-bottom: 2px solid white !important;
@@ -40,7 +42,23 @@ input {
   outline: none;
   color: #fff;
 }
-.small{
+
+.shade {
+  color: silver;
+}
+
+.small {
   font-size: 0.7em !important;
   color: silver;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5em;
 }
