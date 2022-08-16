@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: 'Oxygen', sans-serif;
   color: #fff;
-  /* outline: 1px solid silver; */
+  outline: 1px solid silver;
 }
 
 .deg {
@@ -32,9 +32,11 @@
   /* color: #aaa; */
   color: silver;
 }
-.border-top{
+
+.border-top {
   color: silver !important;
 }
+
 input {
   background-color: transparent;
   border-bottom: 2px solid white !important;

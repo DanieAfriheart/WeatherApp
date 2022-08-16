@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const data = await getFormattedWeatherData("Oyo", units)
+      const data = await getFormattedWeatherData("Lagos", units)
       setWeather(data)
 
       // console.log(data);
@@ -46,18 +46,18 @@ function App() {
                   </div>
 
                   <div className="align-items-end h-75 d-flex mt-5">
-                    <div className="row d-flex flex-row align-items-center ps-5 col-md-8">
-                      <div className="col">
+                    <div className="row d-flex flex-row align-items-center ps-5 col-md-7">
+                      <div className="col-md-12">
                         <h1 className='deg'>{`${weather.temp.toFixed()}°${units === 'metric' ? 'C' : 'F'} `}</h1>
                       </div>
-                      <div className="col">
+                      <div className="col h-100 d-flex flex-column">
                         <h2>{`${weather.name}, ${weather.country}`}</h2>
-                        <p>Lorem, ipsum.</p>
+                        {/* <p>Lorem, ipsum.</p> */}
+                        <p>{weather.description}</p>
                       </div>
                       <div className="col">
                         {/* <RiSunCloudyLine className='display-3' /> */}
                         <img className='img-fluid col-md-7' src={weather.iconURl} alt="" />
-                        <p>{weather.description}</p>
                       </div>
                     </div>
                   </div>
