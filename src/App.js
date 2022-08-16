@@ -16,19 +16,25 @@ import Description from './Description';
 function App() {
   const [weather, setWeather] = useState(null)
   const [units, setUnits] = useState('metric')
+  const [city, setCity] = useState("Lagos")
 
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const data = await getFormattedWeatherData("Lagos", units)
+      const data = await getFormattedWeatherData(city, units)
       setWeather(data)
 
       // console.log(data);
 
     };
     fetchWeatherData();
-  }, []);
+  }, [city]);
 
-
+  const handleSearch = () => {
+    if (handleSearch){
+      setCity(e.locat.value)
+    }
+    // console.log(locat.value);
+  }
 
   return (
     <>
@@ -41,16 +47,16 @@ function App() {
 
                   {/* Locationn Search */}
                   <div className="d-flex justify-content-between mb-3 px-md-5 col-12 col-md-6">
-                    <input type="text" placeholder='Search location' className='p-1 w-100' />
-                    <Button className='bg-transparent border-0'><BsSearch /></Button>
+                    <input type="text" placeholder='Search location' className='p-1 w-100' id='locat' />
+                    <Button className='bg-transparent border-0' onClick={handleSearch}><BsSearch /></Button>
                   </div>
 
                   <div className="align-items-end h-75 d-flex mt-5">
-                    <div className="row d-flex flex-row align-items-center ps-5 col-md-7">
+                    <div className="row d-flex flex-row align-items-center ps-5 col-md-6">
                       <div className="col-md-12">
                         <h1 className='deg'>{`${weather.temp.toFixed()}°${units === 'metric' ? 'C' : 'F'} `}</h1>
                       </div>
-                      <div className="col h-100 d-flex flex-column">
+                      <div className="col-8 h-100 d-flex flex-column">
                         <h2>{`${weather.name}, ${weather.country}`}</h2>
                         {/* <p>Lorem, ipsum.</p> */}
                         <p>{weather.description}</p>
