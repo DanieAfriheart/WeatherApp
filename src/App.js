@@ -1,45 +1,49 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col } from 'react-bootstrap';
-import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import Watermark from "./Watermark";
 import { getFormattedWeatherData } from './Weather';
-// import Description from "./Description";
 
-// Icon
-// import { RiSunCloudyLine } from 'react-icons/ri';
-import { BsSearch } from 'react-icons/bs';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Description from './Description';
+// Images
+import hotBg from '../src/img/sunBg.jpg';
+import coldBg from '../src/img/mountainBg.jpg';
 
 function App() {
   const [weather, setWeather] = useState(null)
   const [units, setUnits] = useState('metric')
   const [city, setCity] = useState("Lagos")
+  const [bg, setBg] = useState(hotBg)
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       const data = await getFormattedWeatherData(city, units)
       setWeather(data)
 
-      // console.log(data);
-
+      // dynamic Bg
+      const threshold = units === 'metric' ? 20 : 60;
+      if (data.temp <= threshold) setBg(coldBg)
+      else setBg(hotBg);
     };
     fetchWeatherData();
-  }, [city]);
+  }, [city, units]);
 
-  const handleSearch = () => {
-    if (handleSearch){
-      setCity(e.locat.value)
+  const enterKeyPressed = (e) => {
+    if (e.keyCode === 13) {
+      setCity(e.currentTarget.value)
+      e.currentTarget.blur()
     }
-    // console.log(locat.value);
   }
+  const handleUnits = (e) => {
 
+  }
   return (
     <>
       <div className="App">
-        <Container fluid className='bg' style={{ height: '100vh' }}>
+        <Container fluid className='bg' style={{ height: '100vh', backgroundImage: `url(${bg})` }}>
           {weather && (
             <Container fluid className='h-100 px-0'>
               <div className="row h-100">
@@ -47,8 +51,8 @@ function App() {
 
                   {/* Locationn Search */}
                   <div className="d-flex justify-content-between mb-3 px-md-5 col-12 col-md-6">
-                    <input type="text" placeholder='Search location' className='p-1 w-100' id='locat' />
-                    <Button className='bg-transparent border-0' onClick={handleSearch}><BsSearch /></Button>
+                    <input type="text" placeholder='Search location' className='p-1 w-100' id='locat' onKeyDown={enterKeyPressed} />
+                    <Button className='ms-auto' onclick={(e) => handleUnits(e)}>°F</Button>
                   </div>
 
                   <div className="align-items-end h-75 d-flex mt-5">
@@ -62,7 +66,6 @@ function App() {
                         <p>{weather.description}</p>
                       </div>
                       <div className="col">
-                        {/* <RiSunCloudyLine className='display-3' /> */}
                         <img className='img-fluid col-md-7' src={weather.iconURl} alt="" />
                       </div>
                     </div>
@@ -75,8 +78,6 @@ function App() {
               </div>
 
               <Watermark />
-
-              {/* <descriptions weather={weather} units=(units) /> */}
             </Container>
           )}
         </Container>

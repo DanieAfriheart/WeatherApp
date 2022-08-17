@@ -8,7 +8,7 @@ const Watermark = () => {
     return (
         <>
             <Container fluid className='fixed-bottom pb-3'>
-                <Col className='text-end mx-auto col-11'><p className='small'>Designed by <a href="https://linkedln.com/daniel-esuola" className='text-light text-decoration-none'> Esuola Daniel</a></p></Col>
+                <Col className='text-end mx-auto col-11'><p className='small'>Designed by <a href="https://www.linkedin.com/in/daniel-esuola/" className='text-light text-decoration-none'> Esuola Daniel</a></p></Col>
             </Container>
         </>
     );

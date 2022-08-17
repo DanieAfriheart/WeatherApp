@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: 'Oxygen', sans-serif;
   color: #fff;
-  /* outline: 1px solid silver; */
+  outline: 1px solid silver;
 }
 
 .deg {
@@ -14,7 +14,6 @@
 }
 
 .bg {
-  background-image: url(./img/bkg.jpg);
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
