@@ -1,5 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import { GrMapLocation } from 'react-icons/gr'
 
 const Description = ({ weather, units }) => {
     const tempUnit = units === 'metric' ? '°C' : '°F'
@@ -12,7 +13,7 @@ const Description = ({ weather, units }) => {
                     <p className='fw-bold'>Weather Details</p>
 
                     <ul className="pt-4 px-0">
-                        <li><span className='shade fw-bold'>Location</span> <span>{`${weather.name}, ${weather.country}`}</span></li>
+                        <li><span className='shade fw-bold'> Location</span> <span>{`${weather.name}, ${weather.country}`}</span></li>
                         <li><span className='shade fw-bold'>Description</span> <span>{`${weather.description}`}</span></li>
                         <li><span className='shade fw-bold'>Humidity</span> <span>{`${weather.humidity}`}%</span></li>
                         <li><span className='shade fw-bold'>Wind</span> <span>{`${weather.speed} ${windUnit}`}</span></li>

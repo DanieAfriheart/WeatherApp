@@ -37,9 +37,15 @@ function App() {
       e.currentTarget.blur()
     }
   }
-  const handleUnits = (e) => {
+  // const handleUnits = (e) => {
+  //   alert('gg')
+  //   const button = e.currentTarget;
+  //   const currentUnit = button.innerText.slice(1);
 
-  }
+  //   const isCelsius = currentUnit === 'C';
+  //   button.innerText = isCelsius ? '°F' : '°C';
+  //   setUnits(isCelsius ? 'metric' : 'imperial');
+  // }
   return (
     <>
       <div className="App">
@@ -52,7 +58,7 @@ function App() {
                   {/* Locationn Search */}
                   <div className="d-flex justify-content-between mb-3 px-md-5 col-12 col-md-6">
                     <input type="text" placeholder='Search location' className='p-1 w-100' id='locat' onKeyDown={enterKeyPressed} />
-                    <Button className='ms-auto' onclick={(e) => handleUnits(e)}>°F</Button>
+                    {/* <Button className='ms-auto' onclick={(e) => handleUnits(e)}>°F</Button> */}
                   </div>
 
                   <div className="align-items-end h-75 d-flex mt-5">
