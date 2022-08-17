@@ -8,7 +8,7 @@ const Description = ({ weather, units }) => {
 
     return (
         <>
-            <div className="px-md-5 px-3 d-flex flex-column justify-content-between">
+            <div className="px-md-5 px-3 d-flex flex-column align-items-center h-100 justify-content-center">
                 <Container className='px-0'>
                     <p className='fw-bold'>Weather Details</p>
 

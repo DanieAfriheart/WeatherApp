@@ -53,7 +53,7 @@ function App() {
           {weather && (
             <Container fluid className='h-100 px-0'>
               <div className="row h-100">
-                <Col md={8} className='p-5 '>
+                <Col md={8} className='p-md-5 pt-5 pt-md-0 d-flex flex-column justify-content-center'>
 
                   {/* Locationn Search */}
                   <div className="d-flex justify-content-between mb-3 px-md-5 col-12 col-md-6">
@@ -62,9 +62,9 @@ function App() {
                   </div>
 
                   <div className="align-items-end h-75 d-flex mt-5">
-                    <div className="row d-flex flex-row align-items-center ps-5 col-md-6">
+                    <div className="row d-flex flex-row align-items-center ps-md-5 ps-3 col-md-6">
                       <div className="col-md-12">
-                        <h1 className='deg'>{`${weather.temp.toFixed()}°${units === 'metric' ? 'C' : 'F'} `}</h1>
+                        <h1 className='deg '>{`${weather.temp.toFixed()}°${units === 'metric' ? 'C' : 'F'} `}</h1>
                       </div>
                       <div className="col-8 h-100 d-flex flex-column">
                         <h2>{`${weather.name}, ${weather.country}`}</h2>
